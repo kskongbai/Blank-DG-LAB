@@ -1,6 +1,6 @@
 # Blank DG-LAB
 
-![](https://img.shields.io/badge/Minecraft-26.1.x-green?style=for-the-badge) ![](https://img.shields.io/badge/Loader-Fabric-d6c4ff?style=for-the-badge) ![](https://img.shields.io/badge/License-All_Rights_Reserved-blue?style=for-the-badge)[![CurseForge](https://img.shields.io/badge/Download_on-CurseForge-f16436?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/blank-dg-lab)
+![](https://img.shields.io/badge/Minecraft-26.1.x-green?style=for-the-badge) ![](https://img.shields.io/badge/Loader-Fabric-d6c4ff?style=for-the-badge) ![](https://img.shields.io/badge/License-All_Rights_Reserved-blue?style=for-the-badge) [![CurseForge](https://img.shields.io/badge/Download_on-CurseForge-f16436?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/blank-dg-lab)
 
 **Connect your DG-LAB Coyote 3.0 device to Minecraft for real-time, game-driven haptic feedback.**
 

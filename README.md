@@ -1,6 +1,6 @@
 # Blank DG-LAB
 
-![](https://img.shields.io/badge/Minecraft-26.1.x-green?style=for-the-badge) ![](https://img.shields.io/badge/Loader-Fabric-d6c4ff?style=for-the-badge) ![](https://img.shields.io/badge/License-All_Rights_Reserved-blue?style=for-the-badge) [![CurseForge](https://img.shields.io/badge/Download_on-CurseForge-f16436?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/blank-dg-lab)
+![](https://img.shields.io/badge/Minecraft-1.21.11~26.2-green?style=for-the-badge) ![](https://img.shields.io/badge/Loader-Fabric-d6c4ff?style=for-the-badge)![Loader](https://img.shields.io/badge/Loader-NeoForge-orange?style=for-the-badge) ![](https://img.shields.io/badge/License-All_Rights_Reserved-blue?style=for-the-badge)
 
 **Connect your DG-LAB Coyote 3.0 device to Minecraft for real-time, game-driven haptic feedback.**
 
@@ -59,13 +59,17 @@ Blank DG‑LAB is a client‑side Fabric mod for Minecraft 26.1 that transforms 
 
 ## 📋 Requirements
 
-| Software                   |Version                        |
-| -------------------------- |------------------------------ |
-| Minecraft                  |26.1 / 26.1.1 / 26.1.2         |
-| Fabric Loader              |≥ 0.18.0                       |
-| Fabric API                 |*                              |
-| YetAnotherConfigLib (YACL) |≥ 3.9.0+26.1-fabric (Required) |
-| Java                       |≥ 25                           |
+| 软件 | 版本 |
+|------|------|
+| Minecraft | 26.1 / 26.1.1 / 26.1.2 / 26.2 / 1.21.11 |
+| Mod Loader | Fabric ≥ 0.18.0 或 NeoForge |
+| API | Fabric API / NeoForge No API |
+| YetAnotherConfigLib (YACL) | ≥ 3.9.0+26.1-fabric（**must Just choose the latest one.**） |
+| Java | ≥ 25（26.x）/ ≥ 21（1.21.x） |
+
+> * Fabric API version must match your Minecraft version.  
+> * YetAnotherConfigLib (YACL) – just choose the latest version that corresponds.  
+> **Note:** 1.21.x requires Java 21, while 26.x requires Java 25.
 
 **Hardware:**
 
@@ -144,6 +148,13 @@ The mod embeds a WebSocket server that implements the DG‑LAB SOCKET V2 protoco
 
 ***
 
+## 🔮 Future Plans
+
+- **Continued Maintenance** — We will keep maintaining the 26.x branch with bug fixes and improvements.
+- **Newer Versions** — Support for the latest Minecraft releases will be added over time.
+- **Legacy Backport** — Gradual backporting to Minecraft 1.20 and above is planned, but progress will be slow.
+- **Priority** — The immediate focus is on delivering **NeoForge for Minecraft 1.21.1**.
+
 ## ❓ FAQ
 
 **Q:Is this mod allowed on servers?**  
@@ -166,6 +177,7 @@ A:Please open an issue on the GitHub issue tracker.
 
 ***
 
+
 ## 📜 License
 
 This mod is licensed under the **GNU Lesser General Public License v3.0 (LGPL-3.0)**. See `LICENSE` file for details. _(The DG‑LAB backend is a separate project and uses its own license.)_
@@ -176,10 +188,11 @@ This mod is licensed under the **GNU Lesser General Public License v3.0 (LGPL-3.
 
 *   DG‑LAB for providing the open‑source SOCKET V2 communication protocol
 *   The Fabric team for the excellent modding toolchain
+*   The NeoForge team for their dedication to the community-driven loader ecosystem
 *   YetAnotherConfigLib for the clean configuration GUI framework
 
 ***
 
 **Enjoy your new level of immersion – responsibly!**
 
-**Last updated: May 2026 | Supports Minecraft 26.1.x**
+**Last updated: June 2026 | Supports Minecraft 1.21.11~26.2**

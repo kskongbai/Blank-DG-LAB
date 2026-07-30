@@ -194,6 +194,7 @@ Minecraft → 内嵌 WebSocket 服务器 → DG-LAB App（手机）→ 蓝牙 �
 ## 🔮 未来计划
 
 *   ✅ **已完成：** Minecraft 1.21.1 的 NeoForge 支持——在此版本中交付。
+*   **移植** - 将SocketV2重写至V4 预计8月中上旬发布 + 1.20.1Fabric+Forge
 *   **持续维护** — 我们将继续维护 26.x 分支，修复 bug 并改进。
 *   **更新版本** — 将随时间推移添加对最新 Minecraft 版本的支持。
 *   **旧版本移植** — 计划逐步向后移植到 Minecraft 1.20 及以上，但进度会比较缓慢。

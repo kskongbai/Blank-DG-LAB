@@ -1,198 +1,247 @@
 # Blank DG-LAB
 
-![](https://img.shields.io/badge/Minecraft-1.21.11~26.2-green?style=for-the-badge) ![](https://img.shields.io/badge/Loader-Fabric-d6c4ff?style=for-the-badge)![Loader](https://img.shields.io/badge/Loader-NeoForge-orange?style=for-the-badge) ![](https://img.shields.io/badge/License-All_Rights_Reserved-blue?style=for-the-badge)
+**将您的 DG-LAB Coyote 3.0 设备连接到 Minecraft，体验实时、由游戏驱动的触觉反馈。**
 
-**Connect your DG-LAB Coyote 3.0 device to Minecraft for real-time, game-driven haptic feedback.**
+Blank DG-LAB 是一款 Minecraft 客户端模组，通过 DG-LAB Coyote 3.0 设备将游戏内事件转化为物理触觉脉冲。感受每一次击中、每一次坠落、每一次死里逃生——现在，通过深度 Create 与 Aeronautics 集成，**感受每一次转向、爬升与引擎轰鸣**。
 
-Blank DG‑LAB is a client‑side Fabric mod for Minecraft 26.1 that transforms in‑game events into physical haptic pulses via the DG‑LAB Coyote 3.0 device. Feel every hit, every fall, every close call – all through the official SOCKET V2 protocol, with no external backend required.
+> **这是一款触觉/生物反馈外设模组。** 不含任何性主题、NSFW 元素或年龄限制内容。所有反馈完全基于游戏内伤害、玩家动作与载具物理。
 
-> **This is a haptic / biofeedback peripheral mod.** It contains no sexual themes, NSFW elements, or age‑restricted material. All feedback is purely based on in‑game damage and player actions.
+---
 
-***
+## ✨ 特性
 
-## ✨ Features
+### 🔗 连接
 
-### 🔗 Connection
+*   **二维码配对** — 内嵌 WebSocket 服务器生成二维码；用 DG-LAB App 扫码即可即时连接
+*   **无需外部后端** — 模组内部运行自己的 WebSocket 服务器——无需 Node.js 或独立后端
+*   **自动端口检测** — 自动查找可用端口，提供随机化按钮以便快速更换
+*   **重连支持** — App 断开后自动尝试重连
+*   **IP 输入净化** — 处理手动 IP 输入中的中文标点与全角数字
 
-*   **QR Code Pairing** – Embedded WebSocket server generates a QR code; scan with the DG‑LAB App to connect instantly
-*   **No External Backend** – The mod runs its own WebSocket server internally – no Node.js or separate backend needed
-*   **Auto Port Detection** – Automatically finds available ports, with a randomize button for quick changes
-*   **Reconnection Support** – Automatically attempts to reconnect if the app disconnects
-*   **IP Input Sanitization** – Handles Chinese punctuation and full‑width numbers in manual IP entry
+### ✈️ Create 与 Aeronautics 集成（新 — 2026 年夏季）
 
-### ⚡ Damage & Status Detection
+> **这是 2026 年夏季特别版的核心功能。** 将您的 DG-LAB 设备变成全身飞行接口。
 
-*   **Combat Damage** – Configurable multiplier, min/max strength, and pulse duration per damage type
-*   **10 Damage Types** – Separate settings for Generic, Projectile, Fire, Fall, DoT, Magic, Explosion, Drown, Environmental, and Death
-*   **Low Health Trigger** – Continuous pulses when below max health (configurable strength per 10% lost)
-*   **Low Hunger Trigger** – Continuous pulses when below max hunger (configurable strength per 10% lost)
-*   **Absorption Hearts** – Golden apple absorption is counted as effective health
-*   **Creative/Spectator Immunity** – No haptics in creative or spectator modes
-*   **Pause Detection** – No health/hunger checks when the game is paused (ESC)
+**Create: Aeronautics 集成：**
 
-### 📊 Strength System
+*   **速度映射触觉** — 载具速度直接映射到振动强度——飞得越快，反馈越强
+*   **转向感** — 转向时根据角速度添加额外脉冲——每次倾斜与翻滚都触手可及
+*   **高度反馈** — 垂直速度（爬升/下降）控制振动强度；悬停时保持静默
+*   **碰撞冲击** — 撞击时瞬间高强度脉冲——模拟坠毁感
+*   **气球损伤** — 气球/飞艇气囊破裂时的渐隐脉冲——模拟升力损失
+*   **四种预设** — 轻/中/强/极限——一键切换，适配不同耐受度
+*   **自定义曲线** — 自由配置"每 X m/s = Y 强度"，精细调校个人偏好
 
-*   **Triple Limit System** – Effective limit = min(APP limit, in‑game config limit)
-*   **A/B Channel Independent Limits** – Separate tracking and notifications for each channel
-*   **Float Precision Stacking** – All damage contributions use float arithmetic, rounded only at final output
-*   **Auto Clamping** – Strength never exceeds the effective limit
+**Create 模组集成：**
 
-### 🖥️ HUD Display
+*   **引擎振动** — 基于引擎 RPM 的实时反馈——感受机器的力量
+*   **故障警告** — 引擎过热或损坏时的警报脉冲——在故障前发现问题
+*   **机械运作** — 旋转部件（轴、齿轮）运转时的持续微振动
 
-*   **4 Visual Styles** – BAR, WAVE, PULSE, NUMBER
-*   **Draggable Position** – In‑game HUD editor with drag‑and‑drop positioning
-*   **Adjustable Scale** – 0.5× to 2.0× scaling
-*   **Smooth Transitions** – Dynamic lerp animation: fast rise on damage, gradual fall on recovery
-*   **Connection Status** – Text indicators showing "✓ Connected" or "✗ Disconnected"
-*   **Pause‑Aware Animation** – Wave and pulse animations freeze when the game is paused
-*   **Semi‑transparent Background** – Light overlay for readability on any scene
+### ⚡ 伤害与状态检测
 
-### ⚙️ Configuration (YACL)
+*   **战斗伤害** — 每种伤害类型可配置倍率、最小/最大强度与脉冲时长
+*   **10 种伤害类型** — 通用、弹射物、火焰、坠落、持续伤害、魔法、爆炸、溺水、环境、死亡分别独立设置
+*   **低生命值触发** — 生命值低于最大值时持续脉冲（每损失 10% 可配置强度）
+*   **低饥饿值触发** — 饥饿值低于最大值时持续脉冲（每损失 10% 可配置强度）
+*   **吸收心** — 金苹果吸收心计入有效生命值
+*   **创造/旁观者免疫** — 创造或旁观模式下无触觉反馈
+*   **暂停检测** — 游戏暂停（ESC）时不检查生命/饥饿
 
-*   **No ModMenu Required** – Press B to open the main menu, or access YACL config directly
-*   **Per‑Scenario Settings** – Independent multiplier, min, max, and duration for each damage type
-*   **Preset System** – Save, load, import, and export strength presets (shader‑pack style list with scrollbar)
-*   **Built‑in Presets** – Light, Medium, Heavy, Extreme – ready to use out of the box
-*   **Confirmation Dialogs** – Warns when importing presets that exceed current limits
+### 📊 强度系统
 
-***
+*   **三重限制系统** — 有效限制 = min(APP 限制, 游戏内配置限制)
+*   **A/B 通道独立限制** — 每个通道独立跟踪与通知
+*   **浮点精度堆叠** — 所有伤害贡献使用浮点运算，仅在最终输出时取整
+*   **自动钳制** — 强度永远不会超过有效限制
 
-## 📋 Requirements
+### 🖥️ HUD 显示
+
+*   **4 种视觉样式** — BAR、WAVE、PULSE、NUMBER
+*   **可拖动位置** — 游戏内 HUD 编辑器，拖放定位
+*   **可调节缩放** — 0.5× 到 2.0× 缩放
+*   **平滑过渡** — 动态线性插值动画：受伤时快速上升，恢复时渐变下降
+*   **连接状态** — 文本指示器显示"✓ 已连接"或"✗ 已断开"
+*   **暂停感知动画** — 游戏暂停时波形与脉冲动画冻结
+*   **半透明背景** — 轻量叠加，在任何场景下保证可读性
+
+### ⚙️ 配置（YACL）
+
+*   **无需 ModMenu** — 按 B 键打开主菜单，或直接访问 YACL 配置
+*   **分场景设置** — 每种伤害类型独立的倍率、最小值、最大值与时长
+*   **预设系统** — 保存、加载、导入、导出强度预设（着色器包风格的滚动列表）
+*   **内置预设** — 轻、中、重、极限——开箱即用
+*   **确认对话框** — 导入超过当前限制的预设时给出警告
+
+---
+
+## 📋 环境要求
 
 | 软件 | 版本 |
-|------|------|
-| Minecraft | 26.1 / 26.1.1 / 26.1.2 / 26.2 / 1.21.11 |
-| Mod Loader | Fabric ≥ 0.18.0 或 NeoForge |
-| API | Fabric API / NeoForge No API |
-| YetAnotherConfigLib (YACL) | ≥ 3.9.0+26.1-fabric（**must Just choose the latest one.**） |
-| Java | ≥ 25（26.x）/ ≥ 21（1.21.x） |
+| -------------------------- |--------------------------------------------------------------------------------------------- |
+| Minecraft                  | 26.1 / 26.1.1 / 26.1.2 / 26.2 / 1.21.11 / 1.21.1 |
+| 模组加载器                 | Fabric ≥ 0.18.0 或 NeoForge |
+| API                        | Fabric API / NeoForge（无需单独 API） |
+| YetAnotherConfigLib (YACL) | ≥ 3.9.0+26.1-fabric（适用于 26.x）/ ≥ 3.9.0+1.21.1-neoforge（适用于 1.21.1） |
+| Java                       | ≥ 25（适用于 26.x）/ ≥ 21（适用于 1.21.x） |
 
-> * Fabric API version must match your Minecraft version.  
-> * YetAnotherConfigLib (YACL) – just choose the latest version that corresponds.  
-> **Note:** 1.21.x requires Java 21, while 26.x requires Java 25.
+> *   Fabric API 版本必须与您的 Minecraft 版本匹配。
+> *   YetAnotherConfigLib (YACL) – 只需选择对应的最新版本。
+> *   **注意：** 1.21.x 需要 Java 21，而 26.x 需要 Java 25。
 
-**Hardware:**
+### 可选依赖（用于集成功能）
 
-*   DG‑LAB Coyote 3.0 device
-*   A mobile phone with the official DG‑LAB 3.0 App
+| 模组 | 类型 | 用途 |
+| ------------------- |-------- |------------------------------------------------------------- |
+| **Create** | 可选 | 启用引擎振动与机械反馈 |
+| **Create: Aeronautics** | 可选 | 启用速度、转向、高度与碰撞反馈 |
+| **CC:Sable** | 可选 | 提升 Aeronautics 载具检测精度（推荐） |
 
-***
+> 💡 当对应模组未安装时，集成功能自动隐藏——基础模组仍然完全可用。
 
-## 🚀 Quick Start
+**硬件：**
 
-1.  **Install the mod** – Drop `blankdglab-<version>.jar` into your `mods` folder
-2.  **Open the mod** – Press `B` in‑game to open the main menu
-3.  **Connect your device** – Click "QR Code Connect", then scan the QR code with the DG‑LAB App on your phone
-4.  **Set APP limits** – In the DG‑LAB App, go to SOCKET Control and tap the `+` button on both A and B channel limits until they reach your desired maximum
-5.  **Play!** – The HUD will show connection status, and in‑game events will trigger haptic pulses
+*   DG-LAB Coyote 3.0 设备
+*   一部装有官方 DG-LAB 3.0 App 的手机
 
-***
+---
 
-## ⚙️ Configuration
+## 🚀 快速开始
 
-All settings are accessible via **`B` key** → main menu → settings, or directly through YACL.  
-Configuration is saved to `config/blankdglab.json`.
+1.  **安装模组** – 将 `blankdglab-<version>.jar` 放入您的 `mods` 文件夹
+2.  **安装可选集成** – （可选）添加 Create 和/或 Aeronautics 以获得飞行反馈
+3.  **打开模组** – 游戏内按 `B` 键打开主菜单
+4.  **连接设备** – 点击"二维码连接"，然后用手机上的 DG-LAB App 扫描二维码
+5.  **设置 APP 限制** – 在 DG-LAB App 中，进入 SOCKET 控制页，点击 A 与 B 通道限制的 `+` 按钮，直到达到您期望的最大值
+6.  **开始游玩！** – HUD 将显示连接状态，游戏内事件将触发触觉脉冲
 
-### Connection Settings
+---
 
-| Setting           |Description                                      |Default |
+## ⚙️ 配置
+
+所有设置均可通过 **`B` 键** → 主菜单 → 设置访问，或直接通过 YACL。
+配置保存于 `config/blankdglab.json`。
+
+### 连接设置
+
+| 设置 | 说明 | 默认值 |
 | ----------------- |------------------------------------------------ |------- |
-| Server Port       |Embedded WebSocket server port                   |<code>8877</code> |
-| Manual IP         |Override auto‑detected IP (leave empty for auto) |<em>(empty)</em> |
-| Max Strength      |Maximum pulse strength (game‑side cap)           |<code>40</code> |
-| Min Strength      |Minimum pulse strength                           |<code>0</code> |
-| Sync A/B Channels |Send combined strength to both channels          |<code>true</code> |
+| 服务器端口 | 内嵌 WebSocket 服务器端口 | `8877` |
+| 手动 IP | 覆盖自动检测的 IP（留空则自动） | *(空)* |
+| 最大强度 | 最大脉冲强度（游戏端上限） | `40` |
+| 最小强度 | 最小脉冲强度 | `0` |
+| 同步 A/B 通道 | 将合并后的强度发送到两个通道 | `true` |
 
-### Damage Feedback (per type)
+### 伤害反馈（按类型）
 
-Each damage type has independent settings:
+每种伤害类型都有独立设置：
 
-| Setting        |Description                                 |
+| 设置 | 说明 |
 | -------------- |------------------------------------------- |
-| Enable         |Toggle haptic feedback for this damage type |
-| Strength A / B |Pulse strength for channel A and B          |
-| Pulse Duration |Duration of the pulse in milliseconds       |
+| 启用 | 切换此伤害类型的触觉反馈 |
+| 强度 A / B | A 与 B 通道的脉冲强度 |
+| 脉冲时长 | 脉冲持续时间（毫秒） |
 
-**Supported damage types:** Generic, Projectile, Fire, Fall, DoT, Magic, Explosion, Drown, Environmental, Death, Attack, Block Break
+**支持的伤害类型：** 通用、弹射物、火焰、坠落、持续伤害、魔法、爆炸、溺水、环境、死亡、攻击、破坏方块
 
-### Status Feedback
+### 状态反馈
 
-| Setting                   |Description                  |Default |
+| 设置 | 说明 | 默认值 |
 | ------------------------- |---------------------------- |------- |
-| Low Health Feedback       |Pulse when below max health  |<code>true</code> |
-| Low Health Strength / 10% |Strength per 10% health lost |<code>5</code> |
-| Low Health Pulse Interval |Milliseconds between pulses  |<code>2000</code> |
-| Low Hunger Feedback       |Pulse when below max hunger  |<code>false</code> |
-| Low Hunger Strength / 10% |Strength per 10% hunger lost |<code>3</code> |
-| Low Hunger Pulse Interval |Milliseconds between pulses  |<code>3000</code> |
+| 低生命值反馈 | 生命值低于最大值时脉冲 | `true` |
+| 低生命值强度 / 10% | 每损失 10% 生命值的强度 | `5` |
+| 低生命值脉冲间隔 | 脉冲间隔（毫秒） | `2000` |
+| 低饥饿值反馈 | 饥饿值低于最大值时脉冲 | `false` |
+| 低饥饿值强度 / 10% | 每损失 10% 饥饿值的强度 | `3` |
+| 低饥饿值脉冲间隔 | 脉冲间隔（毫秒） | `3000` |
 
-### HUD Settings
+### Aeronautics 反馈（需 Create: Aeronautics）
 
-| Setting      |Description                 |Default            |
+| 设置 | 说明 | 默认值 |
+| ------------------ |--------------------------------------------------- |------- |
+| 速度反馈 | 基于载具速度的振动强度 | `true` |
+| 转向反馈 | 转向时根据角速度添加额外脉冲 | `true` |
+| 高度反馈 | 垂直速度映射到振动强度 | `true` |
+| 碰撞反馈 | 撞击时瞬间强脉冲 | `true` |
+| 引擎振动 | 基于 RPM 的持续振动 | `true` |
+| 故障警告 | 引擎损坏时的警报脉冲 | `true` |
+| 气球损伤 | 气球破裂时的渐隐脉冲 | `true` |
+
+### HUD 设置
+
+| 设置 | 说明 | 默认值 |
 | ------------ |--------------------------- |------------------ |
-| Show HUD     |Toggle HUD visibility       |<code>true</code>  |
-| HUD Style    |BAR / WAVE / PULSE / NUMBER |<code>BAR</code>   |
-| HUD Layout   |VERTICAL / HORIZONTAL       |<code>VERTICAL</code> |
-| HUD Position |Drag‑and‑drop in HUD editor |Left, 30% from top |
-| HUD Scale    |0.5× – 2.0×                 |<code>1.0</code>   |
+| 显示 HUD | 切换 HUD 可见性 | `true` |
+| HUD 样式 | BAR / WAVE / PULSE / NUMBER | `BAR` |
+| HUD 布局 | VERTICAL / HORIZONTAL | `VERTICAL` |
+| HUD 位置 | 在 HUD 编辑器中拖放 | 左侧，距顶部 30% |
+| HUD 缩放 | 0.5× – 2.0× | `1.0` |
 
-***
+---
 
-## 📡 How it Works
+## 📡 工作原理
 
 ```
-Minecraft → Embedded WebSocket Server → DG‑LAB App (phone) → Bluetooth → Coyote Device
+Minecraft → 内嵌 WebSocket 服务器 → DG-LAB App（手机）→ 蓝牙 → Coyote 设备
 ```
 
-The mod embeds a WebSocket server that implements the DG‑LAB SOCKET V2 protocol. When you scan the QR code, the DG‑LAB App connects directly to the mod – no external backend or Node.js server needed. The mod sends structured strength and pulse commands, and the App relays them to the device via Bluetooth.
+模组内嵌一个实现 DG-LAB SOCKET V2 协议的 WebSocket 服务器。当您扫描二维码时，DG-LAB App 直接连接到模组——无需外部后端或 Node.js 服务器。模组发送结构化的强度与脉冲命令，App 通过蓝牙将它们中继到设备。
 
-***
+对于 Create/Aeronautics 集成，模组实时读取载具物理数据（速度、角速度、高度、RPM），并使用您配置的曲线将它们映射到触觉强度。
 
-## 🔮 Future Plans
+---
 
-- **Continued Maintenance** — We will keep maintaining the 26.x branch with bug fixes and improvements.
-- **Newer Versions** — Support for the latest Minecraft releases will be added over time.
-- **Legacy Backport** — Gradual backporting to Minecraft 1.20 and above is planned, but progress will be slow.
-- **Priority** — The immediate focus is on delivering **NeoForge for Minecraft 1.21.1**.
+## 🔮 未来计划
 
-## ❓ FAQ
+*   ✅ **已完成：** Minecraft 1.21.1 的 NeoForge 支持——在此版本中交付。
+*   **持续维护** — 我们将继续维护 26.x 分支，修复 bug 并改进。
+*   **更新版本** — 将随时间推移添加对最新 Minecraft 版本的支持。
+*   **旧版本移植** — 计划逐步向后移植到 Minecraft 1.20 及以上，但进度会比较缓慢。
+*   **更多集成** — 根据社区反馈探索更多模组集成。
 
-**Q:Is this mod allowed on servers?**  
-A:Yes. It is client‑side only and does not interact with server logic. No server installation is required.
+---
 
-**Q:Will it get me banned?**  
-A:No. It does not give any unfair advantage and does not modify server packets.
+## ❓ 常见问题
 
-**Q:Do I need to run a separate backend?**  
-A:No. The mod has its own embedded WebSocket server. Just scan the QR code and connect.
+**问：这个模组在服务器上允许使用吗？**
+答：允许。它仅限客户端，不与服务器逻辑交互。无需服务器安装。
 
-**Q:Why are the A/B channel limits 0 in the APP?**  
-A:The SOCKET V2 protocol does not provide a command to set APP‑side limits. After connecting, go to the APP's SOCKET Control screen and manually tap the `+` button on both A and B channel limits to set them to your desired maximum.
+**问：会被封号吗？**
+答：不会。它不提供任何不公平优势，也不修改服务器数据包。
 
-**Q:Can I use it with other haptic devices?**  
-A:Currently only the DG‑LAB Coyote 3.0 is supported via the official SOCKET V2 protocol.
+**问：需要运行独立后端吗？**
+答：不需要。模组有自己的内嵌 WebSocket 服务器。只需扫描二维码并连接。
 
-**Q:I found a bug / have a suggestion – where can I report?**  
-A:Please open an issue on the GitHub issue tracker.
+**问：为什么 APP 中 A/B 通道限制是 0？**
+答：SOCKET V2 协议未提供设置 APP 端限制的命令。连接后，请进入 APP 的 SOCKET 控制页，手动点击 A 与 B 通道限制的 `+` 按钮，将其设置为您期望的最大值。
 
-***
+**问：可以与其他触觉设备一起使用吗？**
+答：目前仅支持通过官方 SOCKET V2 协议连接的 DG-LAB Coyote 3.0。
 
+**问：需要 Create 或 Aeronautics 才能使用吗？**
+答：不需要。两者都是**可选的**。没有它们，模组仍提供完整的基于伤害的触觉反馈。飞行功能是额外加分项。
 
-## 📜 License
+**问：发现 bug / 有建议——在哪里反馈？**
+答：请在 GitHub issue 跟踪器中提交。
 
-This mod is licensed under the **GNU Lesser General Public License v3.0 (LGPL-3.0)**. See `LICENSE` file for details. _(The DG‑LAB backend is a separate project and uses its own license.)_
+---
 
-***
+## 📜 许可证
 
-## 🤝 Acknowledgements
+本模组基于 **GNU 宽通用公共许可证 v3.0 (LGPL-3.0)** 授权。详情见 `LICENSE` 文件。
 
-*   DG‑LAB for providing the open‑source SOCKET V2 communication protocol
-*   The Fabric team for the excellent modding toolchain
-*   The NeoForge team for their dedication to the community-driven loader ecosystem
-*   YetAnotherConfigLib for the clean configuration GUI framework
+---
 
-***
+## 🤝 致谢
 
-**Enjoy your new level of immersion – responsibly!**
+*   DG-LAB 提供开源的 SOCKET V2 通信协议
+*   Fabric 团队提供优秀的模组开发工具链
+*   NeoForge 团队对社区驱动加载器生态的奉献
+*   YetAnotherConfigLib 提供简洁的配置 GUI 框架
+*   Create 与 Aeronautics 团队创造了令人惊叹的模组，使此次集成成为可能
 
-**Last updated: June 2026 | Supports Minecraft 1.21.11~26.2**
+---
+
+**负责任地享受全新的沉浸体验！**
+
+**最后更新：2026 年 6 月 | 支持 Minecraft 1.21.1、1.21.11~26.2 | 2026 年夏季版**

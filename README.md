@@ -7,7 +7,8 @@ Blank DG-LAB 是一款 Minecraft 客户端模组，通过 DG-LAB Coyote 3.0 设�
 > **这是一款触觉/生物反馈外设模组。** 不含任何性主题、NSFW 元素或年龄限制内容。所有反馈完全基于游戏内伤害、玩家动作与载具物理。
 
 > 📖 完整文档与高级配置请参阅 [GitHub Wiki](https://github.com/kskongbai/Blank-DG-LAB/wiki/)
-
+> 📦 模组发布页：[CurseForge](https://www.curseforge.com/minecraft/mc-mods/blank-dg-lab)  
+> 🔍 您也可以在 PCL / HMCL 等启动器中直接搜索 **Blank DG-LAB** 进行安装。
 ---
 
 ## 📖 目录

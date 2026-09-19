@@ -107,9 +107,9 @@ Blank DG-LAB 是一款 Minecraft 客户端模组，通过 DG-LAB Coyote 3.0 设�
 | 协议 | Minecraft | 加载器 | 状态 |
 | :---: | :--- | :--- | :---: |
 | **V4** | **26.x** | Fabric / NeoForge | ✅ 已发布 |
-| V2 | 1.21.11 | Fabric | ✅ 已发布 · 预计 **9 月中旬**升级 V4 |
-| V2 | 1.21.1 | NeoForge | ✅ 已发布 · 预计 **9 月中旬**升级 V4 |
-| V2 | 1.20.1 | Fabric / Forge | ⏳ 未发布 · 预计 **9 月中旬** |
+| **V4** | 1.21.11 | Fabric | ✅ 已发布 |
+| **V4** | 1.21.1 | NeoForge | ✅ 已发布  |
+| **V4** | 1.20.1 | Fabric / Forge | ✅ 已发布 |
 
 ---
 

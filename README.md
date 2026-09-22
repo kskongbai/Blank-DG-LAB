@@ -1,4 +1,4 @@
-<img width="1441" height="170" alt="image" src="https://github.com/user-attachments/assets/c5e3efeb-973a-442d-84e0-735faad7d07d" /># Blank DG-LAB
+# Blank DG-LAB
 
 **将您的 DG-LAB Coyote 3.0 设备连接到 Minecraft，体验实时、由游戏驱动的触觉反馈。**
 
@@ -112,7 +112,7 @@ Blank DG-LAB 是一款 Minecraft 客户端模组，通过 DG-LAB Coyote 3.0 设�
 | **V4** | 1.21.1 | NeoForge | ✅ 已发布  |
 | **V4** | 1.20.1 | Fabric / Forge | ✅ 已发布 |
 > 注：由于 CurseForge 审核延迟，V4 的 Minecraft 26.3 版本已进入人工审核 2 天，暂未正式发布。
-
+> <img width="1441" height="170" alt="image" src="https://github.com/user-attachments/assets/c5e3efeb-973a-442d-84e0-735faad7d07d" />
 
 ---
 
